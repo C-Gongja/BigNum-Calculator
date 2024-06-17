@@ -71,3 +71,5 @@ cd build
 cmake <path-to-your-project> # CMake will generate a Makefile for you
 make -j # Build the project.
 ```
+### How to run:
+$./Main
