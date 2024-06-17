@@ -1,12 +1,4 @@
-# Homework 1
-
-> Due: 05-16-2023 11:59:59 PM
-
-The goal of this homework is for you to
-
-- review C basics by implementing an arbitrary precision integer.
-- implement a C struct to review memory security topics.
-- get you confortable with bit-wise operations to prepare for cryptography homeworks 
+# BigNum Calculator :infinity:
 
 ## [Arbitrary precision](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic)
 
@@ -18,24 +10,7 @@ This may be very in-convenient and error prone when we are carrying out large sc
 However, integer in Python doesn't seem to have this limitation and can represent arbitrary precisions. 
 You can calculate any integer operations without worrying the upper bound or lower bound.
 
-In this homework, we implement an arbitrary precision int (`APInt`).
-For simplicity, `APInt` only stores non-negative numbers.
-
-Here is one example definition.
-Because there can be arbirary bytes for `APInt`, the definition of `APInt` not only includes a buffer that store all the number, there is also a `size` that tracks how many bytes are there for the integer.
-You can organize `bytes` to be [Big endian or little endian](https://en.wikipedia.org/wiki/Endianness), the choice is yours. 
-Thinking endianness, hopefully you will realize why little endian, although looking werid, is necessary in some applications.
-
-```c
-typedef struct APInt {
-  int size;
-  uint8_t *bytes;
-} APInt;
-```
-
-You are allowed to define `APInt` anyway you want.
-
-In this homework, you may want to implement a few common methods we need for `APInt`
+# Structure 
 
 - Constructive methods:
   - Conversion from and to `uint64_t`.
@@ -83,12 +58,10 @@ All numbers are `uint64_t` typed, i.e. some of the constants can be really large
 - `main.c` should carry out the read and write, including processing commands.
 - `CMakeLists.txt` specifies how you build the project. You don't need to worry about it as it is already finished. You can build with `cmake <path-to-your-projec>`. You can also `cmake <path-to-your-projec> -DCMAKE_BUILD_TYPE=asan` to enable [Address sanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer), which checks for memory usages. Your will be graded with `ASan` turned on.
 
-## Build and submission guide
+## Build
 
 [CMake](https://cmake.org/) is used to control the software compilation process using simple platform and compiler independent configuration files. 
-It can greatly simply many build processes.
 CMake genernates build scripts (Makefile or ninja.build) based on `CMakeLists.txt`. 
-Don't worry about `CMakeLists.txt`, it is provided already.
 
 To use CMake, you can do the following:
 
